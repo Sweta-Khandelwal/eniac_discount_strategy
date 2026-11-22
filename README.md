@@ -6,6 +6,8 @@
 ### Contributors: Team Index
 
 - [**Sweta Khandelwal**](https://github.com/Sweta-Khandelwal)
+- Sahana
+- Shardul
 
 ---
 
@@ -38,6 +40,28 @@ Created as a group project at **WBS Coding School**, this case study evaluates h
 * **Seasonality drives major revenue waves:** Revenue surges around peak promotional periods—led by Black Friday/Cyber Week and December holiday sales—before tapering off into spring.
 * **Pre-owned items carry heavy discounts for a small revenue share:** Pre-owned products experience higher median discounts (~27.9% vs. ~17.4% for new items) while accounting for only ~6.2% of revenue.
 
+## 📈 Visualisations
+
+### Revenue peaks come from seasonal shopping events rather than steep markdowns
+
+<img src="images/01_daily_revenue_seasonality.svg" alt="Daily Revenue Seasonality" width="650">
+
+* **Daily Revenue Seasonality:** Highlights major revenue spikes around Black Friday/Cyber Week and December holiday sales compared to off-season baselines.
+
+### Moderate discounts (10–25%) generate the largest share of revenue
+
+<img src="images/04_total_revenue_distribution_by_discount_bucket.svg" alt="Total Revenue Distribution by Discount Bucket" width="600">
+
+* **Revenue by Discount Bucket:** Shows revenue peaking in the **10–25%** (~€3.47M) and **1–10%** (~€2.65M) brackets while **50%+** discounts contribute only ~€0.15M.
+
+### Pre-owned items carry steeper discounts for a small revenue share
+
+<img src="images/05_new_vs_preowned_performance.svg" alt="New vs Pre-Owned Performance" width="550">
+
+* **New vs. Pre-Owned Performance:** Contrasts higher median discounts on pre-owned items (~27.9% vs. ~17.4%) against their small share of revenue (~6.2% vs. ~93.8%).
+
+*Additional charts (category breakdown, paid vs. shelf price, category discount tiers, and monthly revenue vs. discount trends) are available in [`images/`](images/) and [`documents/eniac_discount_strategy_deck.pdf`](documents/eniac_discount_strategy_deck.pdf).*
+
 ---
 ## Insights & Recommended Strategy
 
@@ -59,10 +83,14 @@ Created as a group project at **WBS Coding School**, this case study evaluates h
   * `orderlines` & `orderlines_cleaned`: Line-item quantities, prices actually paid, and item-level discount calculations.
   * `products` & `products_cleaned`: Product identifiers, shelf prices, categories, and new vs. pre-owned attributes.
   * `brands`: Brand reference records.
-* **Data Limitations & Preprocessing Notes:** 
-  * **March 2017 Dip:** Low recorded revenue in March 2017 reflects an order-status recording issue in the source data rather than an actual sales drop.
-  * **Observation Cutoff:** Data runs through **14 March 2018**.
-  * **Revenue vs. Profit:** Unavailability of cost lead to no analysis of actual profits.
+    
+* **Key decisions and limitations:**
+  *  The raw data required extensive cleaning: duplicate SKU entries, missing values, text-formatted dates, and corrupted price formatting (such as multi-dot numbers) were resolved in Python.
+  *  Only **completed** orders were included in the revenue and discount analysis; pending, cancelled, and abandoned cart records were excluded.
+  *  **No product cost data** is available in the dataset, so all performance metrics measure **gross revenue** rather than net profit margin.
+  *  **March 2017** shows artificially low volume due to an order-status recording gap in the source logs, and **March 2018** data ends on **14 March 2018**.
+
+---
 
  ## 📁 Repository Structure
 
