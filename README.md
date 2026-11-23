@@ -6,8 +6,8 @@
 ### Contributors: Team Index
 
 - [**Sweta Khandelwal**](https://github.com/Sweta-Khandelwal)
-- Sahana
-- Shardul
+- [**Sahana Varadharajan**](https://github.com/sahana-varadharajan)
+- [**Shardul Vedpathak**](https://github.com/Shardul0044)
 
 ---
 
